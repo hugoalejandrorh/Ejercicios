@@ -1,16 +1,21 @@
 
 // Uso de Let y Const
-var nombre = "Ricardo Tapia";
-var edad = 23;
+let nombre = "Ricardo Tapia";
+let edad = 23;
 
-var PERSONAJE = {
+let PERSONAJE = {
   nombre: nombre,
   edad: edad
 };
 
 
 // Cree una interfaz que sirva para validar el siguiente objeto
-var batman = {
+interface avangers {
+  nombre:string;
+  artesmarciales:string[];
+}
+
+let batman = {
   nombre: "Bruno Díaz",
   artesMarciales: ["Karate","Aikido","Wing Chun","Jiu-Jitsu"]
 }
@@ -20,16 +25,24 @@ function resultadoDoble( a, b ){
   return (a + b) * 2
 }
 
+let resultadoDoble2 = (a:number ,b:number) => a * b / 2;
+
+//function resultadoDoble(a,b)
+
+
+
 // Función con parametros obligatorios, opcionales y por defecto
 // donde NOMBRE = obligatorio
 //       PODER  = opcional
 //       ARMA   = por defecto = "arco"
-function getAvenger( nombre, poder, arma ){
-  var mensaje;
+function getAvenger( nombre:string, poder?:string, arma:string="arco" ){
+
+  let mensaje:string;
+
   if( poder ){
-     mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
+     mensaje = `${nombre}  tiene el poder de: ${poder} y un arma: ${arma}`;
   }else{
-     mensaje = nombre + " tiene un " + poder
+     mensaje = `${nombre} tiene un  ${poder}`;
   }
 };
 
@@ -40,3 +53,21 @@ function getAvenger( nombre, poder, arma ){
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
+
+class Rectangulo{
+  base:number;
+  altura:number;
+
+  contructor (base:number, altura:number){
+    this.base = base;
+    this.altura = altura;
+
+
+ function calcularArea(base:number, altura:number){
+
+    let  resultado:number = base*altura;
+
+      return resultado;
+  }
+}
+}

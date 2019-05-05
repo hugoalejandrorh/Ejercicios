@@ -1,9 +1,9 @@
 
 // Uso de Let y Const
-let nombre = "Ricardo Tapia";
-let edad = 23;
+let nombre:string = "Ricardo Tapia";
+let edad:number = 23;
 
-let PERSONAJE = {
+const PERSONAJE = {
   nombre: nombre,
   edad: edad
 };
@@ -12,10 +12,10 @@ let PERSONAJE = {
 // Cree una interfaz que sirva para validar el siguiente objeto
 interface avangers {
   nombre:string;
-  artesmarciales:string[];
+  artesMarciales:string[];
 }
 
-let batman = {
+let batman:avangers = {
   nombre: "Bruno Díaz",
   artesMarciales: ["Karate","Aikido","Wing Chun","Jiu-Jitsu"]
 }
@@ -25,7 +25,7 @@ function resultadoDoble( a, b ){
   return (a + b) * 2
 }
 
-let resultadoDoble2 = (a:number ,b:number) => a * b / 2;
+let resultadoDoble2 = (a:number, b:number) => (a + b)*2;
 
 //function resultadoDoble(a,b)
 
@@ -58,16 +58,16 @@ class Rectangulo{
   base:number;
   altura:number;
 
-  contructor (base:number, altura:number){
-    this.base = base;
-    this.altura = altura;
+//  contructor (base:number, altura:number){
+//    this.base = base;
+//    this.altura = altura;
 
 
- function calcularArea(base:number, altura:number){
-
-    let  resultado:number = base*altura;
-
-      return resultado;
-  }
+// function calcularArea(base:number, altura:number){
+//    let  resultado:number = base*altura;
+//      return resultado;
+//}
+  calcular():number{
+    return this.base * this.altura;
 }
 }
